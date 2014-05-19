@@ -90,7 +90,29 @@ featureIndex: 5
 
 <!-- MsgId: kindle_oobe_ariel_common_header_default; PresentationId: 36222231; Version: 4; TemplateId: 34203271; TemplateVersion: 1; FragmentId: ss; -->
 <link rel="stylesheet" href="https://raw.githubusercontent.com/codeforsurvival/Learn/master/others/oobe-new.css" type="text/css" media="all">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>
+ function getScaledRootFont()
+ {
+  var rootH = window.innerHeight
+  //alert(iHeight);
+  var cH = document.getElementById('wrapper').offsetHeight;
+ //alert(divH);
+ var pC = (rootH - cH)*100/rootH;
+ var rFold = $('html').css('font-size');
+ rFold = rFold.replace("px", "");
+ rFold = parseInt(rFold);
+ return rFold + pC*rFold/100;
+ 	
+ }
+ //alert(getScaledRootFont());
+ 
+ 
+ $(window).bind("load", function() {
+   // code here
+   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+});
+</script>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <style  type="text/css"> 
 div.benefit_divider_old {

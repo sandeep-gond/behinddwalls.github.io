@@ -973,6 +973,8 @@ var ue_pty='PrimeClub', ue_spty='SignUpPage_KindleOOBE_ariel', ue_pti='PrimePipe
  //alert(divH);
  var pC = (rootH - cH)*100/rootH;
  var rFold = $('html').css('font-size');
+ rFold = rFold.replace("px", "");
+ rFold = parseInt(rFold);
  return rFold + pC*rFold/100;
  	
  }

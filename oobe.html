@@ -1,7 +1,7 @@
-<html class="no-js">
+<!DOCTYPE>
+<html>
 <head>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
-<script async src="https://raw.githubusercontent.com/codeforsurvival/Learn/master/others/modernizr-latest.js"></script>
 <script type="text/javascript">var ue_t0=ue_t0||+new Date();</script>
 <script type='text/javascript'>
 var ue_id='0ZGCBFYWC9021T82QVJE',
@@ -90,7 +90,29 @@ featureIndex: 5
 
 <!-- MsgId: kindle_oobe_ariel_common_header_default; PresentationId: 36222231; Version: 4; TemplateId: 34203271; TemplateVersion: 1; FragmentId: ss; -->
 <link rel="stylesheet" href="https://raw.githubusercontent.com/codeforsurvival/Learn/master/others/oobe-new.css" type="text/css" media="all">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>
+ function getScaledRootFont()
+ {
+  var rootH = window.innerHeight
+  //alert(iHeight);
+  var cH = document.getElementById('wrapper').offsetHeight;
+ //alert(divH);
+ var pC = (rootH - cH)*100/rootH;
+ var rFold = $('html').css('font-size');
+ rFold = rFold.replace("px", "");
+ rFold = parseInt(rFold);
+ return rFold + pC*rFold/100;
+ 	
+ }
+ //alert(getScaledRootFont());
+ 
+ 
+ $(window).bind("load", function() {
+   // code here
+   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+});
+</script>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <style  type="text/css"> 
 div.benefit_divider_old {
@@ -518,7 +540,7 @@ featureIndex: 5
 
     
 
-    
+<div id="wrapper"    >
     
 
 <!-- MsgId: kindle_oobe_ariel_signupOffer_ft; PresentationId: 36225691; Version: 3; TemplateId: 36225671; TemplateVersion: 5; FragmentId: header; -->
@@ -956,12 +978,36 @@ var ue_pty='PrimeClub', ue_spty='SignUpPage_KindleOOBE_ariel', ue_pti='PrimePipe
 </noscript>
 
 </div>
+</div>
 <script type='text/javascript'>var uept={pageType:'PrimeClub',subPageType:'SignUpPage_KindleOOBE_ariel',pageTypeId:'PrimePipeline',pageAction:'Validate-request'};</script><script type='text/javascript'>
 (function(b,c){var a=c.images;if(a&&a.length){b.ue.count("totalImages",a.length)}})(ue_csm,document);
 </script>
 <script type='text/javascript'>
 (function(b,g){var h=20,i=50,f="length",j=b.ue,d="getEntriesByType";function a(m,l){return m.filter(function(n){return n.initiatorType==l})}function e(l,n){if(!j.t[l]){return}var u=j.t[l]-j._t0,m=n.filter(function(v){return v.responseEnd!==0&&(k(v)<u)}),q=a(m,"script"),o=a(m,"link"),s=a(m,"img"),t=m.map(function(w){var v=w.name.match(/^(https|http)?\:\/\/(.+?)\//i);return v&&v[2]}).filter(function(x,w,v){return x&&v.lastIndexOf(x)==w}),p=m.filter(function(v){return v.duration<h}),r=((u-Math.max.apply(null,m.map(k)))<i)|0;if(l=="af"){j._afjs=q.length}return l+":"+[m[f],q[f],o[f],s[f],t[f],p[f],r].join("-")}function k(l){return l.responseEnd-(j._t0-g.timing.navigationStart)}function c(){var o=g[d]("resource"),n=e("cf",o),l=e("af",o),m=e("ld",o);delete j._rt;j._ld=j.t.ld-j._t0;if(j._art){j._art()}return[n,l,m].join("_")}j._rre=k;j._rt=g&&g.timing&&g[d]&&c})(ue_csm,window.performance);
 </script>
+<!--script>
+ 
+ function getScaledRootFont()
+ {
+  var rootH = window.innerHeight
+  //alert(iHeight);
+  var cH = document.getElementById('wrapper').offsetHeight;
+ //alert(divH);
+ var pC = (rootH - cH)*100/rootH;
+ var rFold = $('html').css('font-size');
+ rFold = rFold.replace("px", "");
+ rFold = parseInt(rFold);
+ return rFold + pC*rFold/100;
+ 	
+ }
+ //alert(getScaledRootFont());
+ 
+ 
+ $(window).bind("load", function() {
+   // code here
+   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+});
+</script-->
 </body>
 </html>
 

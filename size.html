@@ -1,26 +1,72 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'>
   <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1265.19">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Consolas; color: #4d4e53; background-color: #eaeff2; background-color: rgba(234, 239, 1, 0.25)}
+  <style>
+  body,html
+  {
+     margin:0;
+     padding:0;
+     font-size:16px;
+    }
+    #wrapper
+    {
+      background: #000;
+      overflow: auto;
+color: whitesmoke;
+    }
+    #title
+    {
+      padding: 2rem;
+font-size: 3rem;
+border: 0.1rem solid gray;
+    }
+    #upsell
+    {
+      border: 0.1rem solid gray;
+padding: 2rem;
+font-size: 1.5rem;
+      
+    }
+    #bottom
+    {
+       padding: 2rem;
+font-size: 1rem;
+background: green;
+    }
+    @media all and (max-width: 768px)
+    {
+      body,html
+      {
+        
+        font-size: 14px;
+        }
+    }
   </style>
 </head>
 <body>
-<p class="p1"><br></p>
-<p class="p2">&lt;body&gt;</p>
-<p class="p2">&lt;script&gt;</p>
-<p class="p3">iHeight = window.screen.height</p>
-<p class="p2">alert(iHeight);</p>
-<p class="p1"><br></p>
-<p class="p1"><br></p>
-<p class="p2">&lt;/script&gt;</p>
-<p class="p2">&lt;/body&gt;</p>
+<div id="wrapper">
+  <div id="title">
+    Test Height
+  </div>
+  <div id="upsell">
+    Upsell
+    
+  </div>
+  <div id="bottom">
+    Bottom
+  </div>
+  
+</div>
+
+
+<script>
+  var iHeight = window.innerHeight
+  alert(iHeight);
+  var divH = document.getElementById('wrapper').offsetHeight;
+ alert(divH);
+</script>
+
 </body>
 </html>

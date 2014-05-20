@@ -199,7 +199,7 @@ window.onload = function()
    
    //alert('ERRR'+getScaledRootFont());
    setTimeout(function(){
-    //document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
    },1000);
   }
    
@@ -209,7 +209,7 @@ window.onload = function()
   var rootH = window.innerHeight
   var cH = document.getElementById('wrapper').offsetHeight;
 
- var pC = (rootH - cH)*100/rootH;
+ var pC = (rootH - cH)*100/cH;
  var rFold = document.querySelector('html').style.fontSize; //$('html').css('font-size');
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);

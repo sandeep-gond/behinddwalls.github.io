@@ -144,7 +144,10 @@ function prepareKindleAssets() {
   }
 
   document.getElementsByTagName('head')[0].appendChild(jQueryTag);
-
+   
+   alert(getScaledRootFont());
+   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+   
   var styleRules = document.styleSheets[0].cssRules;
   var pattern = /url\(.*\)/g;
   var spriteURL = 'url("https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/eink-assets-transparent4._V383044463_.png")';
@@ -183,8 +186,6 @@ function prepareKindleAssets() {
    if ( $('#fallbackButton').length ) {
   new amznButton("#fallbackButton", closeWindow, "amznButtonPressed");
    }
-   alert(getScaledRootFont());
-   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
  }
 
 window.onload = prepareKindleAssets;

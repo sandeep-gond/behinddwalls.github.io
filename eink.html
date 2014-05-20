@@ -188,6 +188,7 @@ function prepareKindleAssets() {
 window.onload = function()
 {
  prepareKindleAssets();
+ alert(getScaledRootFont());
  $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
 };
  function getScaledRootFont()

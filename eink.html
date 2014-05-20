@@ -196,9 +196,11 @@ window.onload = function()
     document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
   }catch(err)
   {
-   alert('ERRR'+getScaledRootFont());
-    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
    
+   //alert('ERRR'+getScaledRootFont());
+   setTimeout(function(){
+    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+   },1000);
   }
    
 }

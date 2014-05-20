@@ -351,16 +351,16 @@ function closeWindow() {
   var cH = document.getElementById('wrapper').offsetHeight;
 
  var pC = (rootH - cH)*100/rootH;
- var rFold = $('html').css('font-size');
+ var rFold = jQuery('html').css('font-size');
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);
  return rFold + pC*rFold/100;
  	
  }
  
- $(window).bind("load", function() {
+ jQuery(window).bind("load", function() {
    // code here
-   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+   jQuery('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
 });
 </script>
 <title>Amazon Prime</title>

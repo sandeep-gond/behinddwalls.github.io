@@ -130,26 +130,7 @@ span.no_thanks_arrow {
 
 </style>
 <link type="text/css" rel="stylesheet" href="https://raw.githubusercontent.com/codeforsurvival/Learn/master/others/eink-oobe.css" />
-<script type="text/javascript">
- 
- function getScaledRootFont()
- {
-  var rootH = window.innerHeight
-  var cH = document.getElementById('wrapper').offsetHeight;
 
- var pC = (rootH - cH)*100/rootH;
- var rFold = $('html').css('font-size');
- rFold = rFold.replace("px", "");
- rFold = parseInt(rFold);
- return rFold + pC*rFold/100;
- 	
- }
- 
- $(window).bind("load", function() {
-   // code here
-   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
-});
-</script>
 <script type="text/javascript">
 function prepareKindleAssets() {
   //Load jQuery
@@ -362,7 +343,26 @@ function closeWindow() {
   kindle.launchNextApp();
 }
 </script>
+<script type="text/javascript">
+ 
+ function getScaledRootFont()
+ {
+  var rootH = window.innerHeight
+  var cH = document.getElementById('wrapper').offsetHeight;
 
+ var pC = (rootH - cH)*100/rootH;
+ var rFold = $('html').css('font-size');
+ rFold = rFold.replace("px", "");
+ rFold = parseInt(rFold);
+ return rFold + pC*rFold/100;
+ 	
+ }
+ 
+ $(window).bind("load", function() {
+   // code here
+   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+});
+</script>
 <title>Amazon Prime</title>
 
 <!-- PrimeFragmentEnd: ss; -->

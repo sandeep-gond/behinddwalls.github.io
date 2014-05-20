@@ -1,4 +1,4 @@
-<html>
+<html style="font-size:10px">
 <head>
 <script type="text/javascript">var ue_t0=ue_t0||+new Date();</script>
 <script type='text/javascript'>
@@ -184,18 +184,31 @@ function prepareKindleAssets() {
   new amznButton("#fallbackButton", closeWindow, "amznButtonPressed");
    }
    
-    alert(getScaledRootFont());
-   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+    
+   //$('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
  }
 
-window.onload = prepareKindleAssets;
+window.onload = function()
+{
+  try{
+   prepareKindleAssets();
+   alert(getScaledRootFont());
+    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+  }catch(err)
+  {
+   alert('ERRR'+getScaledRootFont());
+    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+   
+  }
+   
+}
  function getScaledRootFont()
  {
   var rootH = window.innerHeight
   var cH = document.getElementById('wrapper').offsetHeight;
 
  var pC = (rootH - cH)*100/rootH;
- var rFold = $('html').css('font-size');
+ var rFold = document.querySelector('html').style.fontSize; //$('html').css('font-size');
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);
  return rFold + pC*rFold/100;

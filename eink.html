@@ -185,8 +185,24 @@ function prepareKindleAssets() {
    }
  }
 
-window.onload = prepareKindleAssets;
+window.onload = function()
+{
+ prepareKindleAssets();
+ $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+};
+ function getScaledRootFont()
+ {
+  var rootH = window.innerHeight
+  var cH = document.getElementById('wrapper').offsetHeight;
 
+ var pC = (rootH - cH)*100/rootH;
+ var rFold = $('html').css('font-size');
+ rFold = rFold.replace("px", "");
+ rFold = parseInt(rFold);
+ return rFold + pC*rFold/100;
+ 	
+ };
+ 
 var amznButtonActive = null;
 function amznButton(id, actionFn, pressedStyle) {
   this.id = id;
@@ -343,26 +359,7 @@ function closeWindow() {
   kindle.launchNextApp();
 }
 </script>
-<script type="text/javascript">
- 
- function getScaledRootFont()
- {
-  var rootH = window.innerHeight
-  var cH = document.getElementById('wrapper').offsetHeight;
 
- var pC = (rootH - cH)*100/rootH;
- var rFold = jQuery('html').css('font-size');
- rFold = rFold.replace("px", "");
- rFold = parseInt(rFold);
- return rFold + pC*rFold/100;
- 	
- }
- 
- jQuery(window).bind("load", function() {
-   // code here
-   jQuery('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
-});
-</script>
 <title>Amazon Prime</title>
 
 <!-- PrimeFragmentEnd: ss; -->

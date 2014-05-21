@@ -193,7 +193,9 @@ window.onload = function()
   try{
    prepareKindleAssets();
    //alert(getScaledRootFont());
+    setTimeout(function(){
     document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+    },1000);
   }catch(err)
   {
    

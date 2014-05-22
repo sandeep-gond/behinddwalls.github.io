@@ -188,24 +188,13 @@ function prepareKindleAssets() {
    //$('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
  }
 
-window.onload = function()
-{
-  try{
-   prepareKindleAssets();
-   //alert(getScaledRootFont());
-    setTimeout(function(){
-   // document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
-    },1000);
-  }catch(err)
-  {
-   
-   //alert('ERRR'+getScaledRootFont());
-   setTimeout(function(){
+window.onload = prepareKindleAssets;
+
+   //setTimeout(function(){
   //  document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
-   },1000);
-  }
+   //},1000);
+  
    
-}
  function getScaledRootFont()
  {
   var rootH = window.innerHeight

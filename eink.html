@@ -326,7 +326,7 @@ function handleTouchEndForButton(event) {
   }
 
 function showSignupError(id) {
-  var error_msg = '<div class="prime-modal-container"><div class="prime-modal-title">Dear test,</div><div class="prime-modal-body">An error occurred while trying to sign you up. Please try again later at Amazon.com/prime <div class="modalButton_container"><table><tr><td class="modalPadding">&nbsp;</td><td><div id="errorButton" class="amznButton textAppearanceAmazonButton modalButtonSmall">Continue</div></td><td class="modalPadding">&nbsp;</td></tr></table></div></div></div>';
+  var error_msg = '<div class="prime-modal-container"><div class="prime-modal-title">Dear test,</div><div class="prime-modal-body">An error occurred while trying to sign you up. Please try again later at Amazon.com/prime <div class="modalButton_container"><table><tr><!--td class="modalPadding">&nbsp;</td--><td><div id="errorButton" class="amznButton textAppearanceAmazonButton modalButtonSmall">Continue</div></td><!--td class="modalPadding">&nbsp;</td--></tr></table></div></div></div>';
   setModalWindow(id, error_msg);
   new amznButton("#errorButton", function() {closeWindow();}, "amznButtonPressed modalButtonSmall");
 }

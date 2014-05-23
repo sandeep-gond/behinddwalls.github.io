@@ -103,7 +103,9 @@ featureIndex: 5
  var rFold = $('html').css('font-size');
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);
- return rFold + pC*rFold/100;
+ var res= rFold + pC*rFold/100;
+ alert(res);
+ return res;
  	
  }
  //alert(getScaledRootFont());

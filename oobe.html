@@ -94,12 +94,9 @@ featureIndex: 5
 <script>
  function getScaledRootFont()
  {
-  //var rootH = window.innerHeight
+  var rootH = window.innerHeight
   //alert(iHeight);
   
-  var body = document.body, html = document.documentElement;
-  var rootH = Math.max( body.scrollHeight, body.offsetHeight, 
-                       html.clientHeight, html.scrollHeight, html.offsetHeight );
                        
   var wrapper = document.getElementById('wrapper');
   var cH = Math.max( wrapper.scrollHeight, wrapper.offsetHeight)

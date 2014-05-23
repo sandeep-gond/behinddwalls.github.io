@@ -105,7 +105,12 @@ featureIndex: 5
  var rFold = $('html').css('font-size');
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);
- var res= rFold + pC*rFold/100;
+ //var res= rFold + pC*rFold/100;
+ var res = pC*rFold/100;
+ if(res<0)
+ {
+  res=res*-1;	
+ }
  alert(res);
  return res;
  	

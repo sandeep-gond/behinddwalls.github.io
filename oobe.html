@@ -96,9 +96,10 @@ featureIndex: 5
  {
   var rootH = window.innerHeight
   //alert(iHeight);
-  var cH = document.getElementById('wrapper').offsetHeight;
- //alert(divH);
- var pC = (rootH - cH)*100/rootH;
+  var cH = document.getElementById('wrapper').scrollHeight;
+ alert(divH);
+ var imgH = $('upsell_container').height();
+ var pC = (rootH - cH)*100/(rootH-imgH);
  var rFold = $('html').css('font-size');
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);

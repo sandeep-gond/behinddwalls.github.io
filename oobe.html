@@ -98,10 +98,10 @@ featureIndex: 5
   var wrapper = document.getElementById('wrapper');
   var cH = Math.max( wrapper.scrollHeight, wrapper.offsetHeight, wrapper.clientHeight);
   
- //alert(rootH+'  '+cH);
+ alert(rootH+'  '+cH);
  
  var imgH = $('div.upsell_container').height();
- //alert(imgH);
+ alert(imgH);
  if(rootH>=cH){
  var pC = (rootH - cH)*100/(rootH-imgH);
  }else{
@@ -111,6 +111,7 @@ featureIndex: 5
  rFold = rFold.replace("px", "");
  rFold = parseInt(rFold);
  var res= rFold + pC*rFold/100;
+ alert(res);
  return res;
  }
  //alert(getScaledRootFont());

@@ -96,7 +96,7 @@ featureIndex: 5
  {
   var rootH = window.innerHeight
   var wrapper = document.getElementById('wrapper');
-  var cH = Math.max( wrapper.scrollHeight, wrapper.offsetHeight);
+  var cH = Math.max( wrapper.scrollHeight, wrapper.offsetHeight, wrapper.clientHeight);
   
  //alert(rootH+'  '+cH);
  
@@ -112,17 +112,16 @@ featureIndex: 5
  rFold = parseInt(rFold);
  var res= rFold + pC*rFold/100;
  return res;
- 	
  }
  //alert(getScaledRootFont());
  
  
  $(window).bind("load", function() {
    // code here
-   $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
+   $('html').css('font-size',getScaledRootFont()+'px');
 });
 </script>
-<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='width=device-width, initial-scale=1.0,user-scalable=no' name='viewport'>
 <style  type="text/css"> 
 div.benefit_divider_old {
     background: url("https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/kindle_oobe/divider._V401240454_.png") no-repeat left top;

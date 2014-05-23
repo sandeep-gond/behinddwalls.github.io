@@ -189,8 +189,15 @@ function prepareKindleAssets() {
    //$('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
  }
 
-window.onload = prepareKindleAssets;
-
+window.onload =function(){
+ try{
+ prepareKindleAssets();
+}catch(err){
+ setTimeout(function(){
+    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+  },1000);
+  
+}
    //setTimeout(function(){
   //  document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
    //},1000);

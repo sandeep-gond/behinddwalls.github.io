@@ -95,9 +95,9 @@ featureIndex: 5
  function getScaledRootFont()
  {
   var rootH = window.innerHeight
-  var wrapper = document.getElementById('wrapper');
-  var cH = Math.max( wrapper.scrollHeight, wrapper.offsetHeight, wrapper.clientHeight);
-  
+  //var wrapper = document.getElementById('wrapper');
+ // var cH = Math.max( wrapper.scrollHeight, wrapper.offsetHeight, wrapper.clientHeight);
+  var cH = $('#wrapper').height();
  alert(rootH+'  '+cH);
  
  var imgH = $('div.upsell_container').height();

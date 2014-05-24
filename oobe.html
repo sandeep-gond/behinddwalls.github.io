@@ -92,28 +92,30 @@ featureIndex: 5
 <link rel="stylesheet" href="https://raw.githubusercontent.com/codeforsurvival/Learn/master/others/oobe-new.css" type="text/css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>
- function getScaledRootFont()
- {
-  var rootH = window.innerHeight-5;
-  var wrapper = document.getElementById('wrapper');
-  var cH = wrapper.offsetHeight;
- // var cH = $('#wrapper').height();
- alert(rootH+'  '+cH);
- 
- var imgH = $('div.upsell_container').height();
- alert(imgH);
- if(rootH>=cH){
- var pC = (rootH - cH)*100/(rootH-imgH);
- }else{
- var pC = (rootH - cH)*100/(cH-imgH);	
- }
- var rFold = $('html').css('font-size');
- rFold = rFold.replace("px", "");
- rFold = parseInt(rFold);
- var res= rFold + pC*rFold/100;
- alert(res);
- return res;
- }
+ function getScaledRootFont() {
+    var errorFactor = 5;
+    var rootH = window.innerHeight;
+    var wrapper = document.getElementById('wrapper');
+    var cH = wrapper.offsetHeight;
+    // var cH = $('#wrapper').height();
+    alert(rootH + '  ' + cH);
+
+    var imgH = $('div.upsell_container').height();
+    alert(imgH);
+    if (rootH >= cH) {
+        rootH = rootH - errFactor;
+        var pC = (rootH - cH) * 100 / (rootH - imgH);
+    } else {
+        cH = cH + errorFactor;
+        var pC = (rootH - cH) * 100 / (cH - imgH);
+    }
+    var rFold = $('html').css('font-size');
+    rFold = rFold.replace("px", "");
+    rFold = parseInt(rFold);
+    var res = rFold + pC * rFold / 100;
+    alert(res);
+    return res;
+}
  //alert(getScaledRootFont());
  
  

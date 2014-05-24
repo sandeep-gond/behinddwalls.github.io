@@ -103,11 +103,9 @@ featureIndex: 5
     var imgH = $('div.upsell_container').height();
     alert(imgH);
     if (rootH >= cH) {
-        rootH = rootH - errFactor;
-        var pC = (rootH - cH) * 100 / (rootH - imgH);
+        var pC = (rootH - cH) * 100 / (rootH - imgH - errFactor);
     } else {
-        cH = cH + errFactor;
-        var pC = (rootH - cH) * 100 / (cH - imgH);
+        var pC = (rootH - cH) * 100 / (cH - imgH + errFactor);
     }
     var rFold = $('html').css('font-size');
     rFold = rFold.replace("px", "");

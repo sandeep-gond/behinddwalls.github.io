@@ -96,7 +96,7 @@ featureIndex: 5
     var errFactor = 5;
     var rootH = window.innerHeight;
     var wrapper = document.getElementById('wrapper');
-    var cH = wrapper.offsetHeight;
+    var cH = Math.max(wrapper.offsetHeight, wrapper.scrollHeight);
     // var cH = $('#wrapper').height();
     //alert(rootH + '  ' + cH);
 

@@ -121,6 +121,7 @@ featureIndex: 5
  
  $(window).bind("load", function() {
    // code here
+   $('html').css('font-size',(getScaledRootFont().toPrecision(3)-1)+'px');
    $('html').css('font-size',getScaledRootFont().toPrecision(3)+'px');
 });
 </script>

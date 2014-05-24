@@ -93,15 +93,15 @@ featureIndex: 5
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>
  function getScaledRootFont() {
-    var errFactor = 10;
+    var errFactor = 5;
     var rootH = window.innerHeight;
     var wrapper = document.getElementById('wrapper');
     var cH = wrapper.offsetHeight;
     // var cH = $('#wrapper').height();
-    alert(rootH + '  ' + cH);
+    //alert(rootH + '  ' + cH);
 
     var imgH = $('div.upsell_container').height();
-    alert(imgH);
+    //alert(imgH);
     if (rootH >= cH) {
     	rootH -= errFactor;
         var pC = (rootH - cH) * 100 / (rootH - imgH);
@@ -113,7 +113,7 @@ featureIndex: 5
     rFold = rFold.replace("px", "");
     rFold = parseInt(rFold);
     var res = rFold + pC * rFold / 100;
-    alert(res);
+    //alert(res);
     return res;
 }
  //alert(getScaledRootFont());

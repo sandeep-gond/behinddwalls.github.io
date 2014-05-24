@@ -93,7 +93,7 @@ featureIndex: 5
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>
  function getScaledRootFont() {
-    var errorFactor = 5;
+    var errFactor = 5;
     var rootH = window.innerHeight;
     var wrapper = document.getElementById('wrapper');
     var cH = wrapper.offsetHeight;
@@ -106,7 +106,7 @@ featureIndex: 5
         rootH = rootH - errFactor;
         var pC = (rootH - cH) * 100 / (rootH - imgH);
     } else {
-        cH = cH + errorFactor;
+        cH = cH + errFactor;
         var pC = (rootH - cH) * 100 / (cH - imgH);
     }
     var rFold = $('html').css('font-size');

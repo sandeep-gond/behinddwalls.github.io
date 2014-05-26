@@ -119,7 +119,7 @@ featureIndex: 5
     if(rootFont > (res-errFactor))
     {
     	alert("ErrFactor "+ (res-errFactor));
-    	return res-errFactor;
+    	return (res-errFactor).toPrecision(3));
     }
     return rootFont;
 }

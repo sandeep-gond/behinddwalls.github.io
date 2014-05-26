@@ -93,7 +93,7 @@ featureIndex: 5
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>
  function getScaledRootFont() {
-    var errFactor = 5;
+    var errFactor = 0.5;
     var rootH = window.innerHeight;
     var wrapper = document.getElementById('wrapper');
     var cH = Math.max(wrapper.offsetHeight, wrapper.scrollHeight);
@@ -114,14 +114,19 @@ featureIndex: 5
     rFold = parseInt(rFold);
     var res = rFold + pC * rFold / 100;
     alert(res);
-    return res;
+    var rootFont = Math.floor(res);
+    if(rootFont > (res-errFactor))
+    {
+    	return res-errFactor;
+    }
+    return rootFont;
 }
  //alert(getScaledRootFont());
  
  
  $(window).bind("load", function() {
    // code here
-   var resFont = Math.floor(getScaledRootFont().toPrecision(3));
+   var resFont = Math.floor(getScaledRootFont());
    //$('html').css('font-size',(resFont-1)+'px');
    $('html').css('font-size',resFont+'px');
 });

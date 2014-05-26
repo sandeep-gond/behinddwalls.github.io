@@ -115,9 +115,10 @@ featureIndex: 5
     var res = rFold + pC * rFold / 100;
     alert(res);
     var rootFont = Math.floor(res);
+    alert(rootFont > (res-errFactor));
     if(rootFont > (res-errFactor))
     {
-    	alert("ErrFactor "+ res-errFactor);
+    	alert("ErrFactor "+ (res-errFactor));
     	return res-errFactor;
     }
     return rootFont;

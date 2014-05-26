@@ -193,11 +193,11 @@ window.onload =function(){
  try{
  prepareKindleAssets();
  setTimeout(function(){
-    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+    document.querySelector('html').style.fontSize = getScaledRootFont()+'px';
   },1000);
 }catch(err){
  setTimeout(function(){
-    document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
+    document.querySelector('html').style.fontSize = getScaledRootFont()+'px';
   },1000);
   
 }
@@ -206,19 +206,37 @@ window.onload =function(){
   //  document.querySelector('html').style.fontSize = getScaledRootFont().toPrecision(3)+'px';
    //},1000);
   
-   
- function getScaledRootFont()
- {
-  var rootH = window.innerHeight
-  var cH = document.getElementById('wrapper').offsetHeight;
-//alert(cH+'  '+rootH);
- var pC = (rootH - cH)*100/rootH;
- var rFold = document.querySelector('html').style.fontSize; //$('html').css('font-size');
- rFold = rFold.replace("px", "");
- rFold = parseInt(rFold);
- return rFold + pC*rFold/100;
- 	
- };
+function getScaledRootFont() {
+    var errFactor = 0.5;
+    var rootH = window.innerHeight;
+    var wrapper = document.getElementById('wrapper');
+    var cH = Math.max(wrapper.offsetHeight, wrapper.scrollHeight);
+    // var cH = $('#wrapper').height();
+    alert(rootH + '  ' + cH);
+
+    var imgH = $('div.upsell_container').height();
+    alert(imgH);
+    if (rootH >= cH) {
+    	//rootH -= errFactor;
+        var pC = (rootH - cH ) * 100 / (rootH - imgH );
+    } else {
+    	//cH += errFactor;
+        var pC = (rootH - cH ) * 100 / (cH - imgH );
+    }
+    var rFold = $('html').css('font-size');
+    rFold = rFold.replace("px", "");
+    rFold = parseInt(rFold);
+    var res = rFold + pC * rFold / 100;
+    alert(res);
+    var rootFont = Math.floor(res);
+    alert(rootFont > (res-errFactor));
+    if(rootFont > (res-errFactor))
+    {
+    	alert("ErrFactor "+ (res-errFactor));
+    	return (res-errFactor).toPrecision(3);
+    }
+    return rootFont;
+};
  
 var amznButtonActive = null;
 function amznButton(id, actionFn, pressedStyle) {
